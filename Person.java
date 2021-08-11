@@ -1,30 +1,51 @@
 public class Person {
     private String name;
-    private int age; //접근제어자
+    private int age;
     private int cashAmount;
     private BankAccount account;
 
-    public void setAge(int newAge){
-        if (newAge>=0) {
-            age = newAge;
-        }
+    public void setName(String pName) {
+        name = pName;
     }
-    public int getAge(){
-            return age;
-        }
-
-    public void setName(String newName){
-            name = newName;
-        }
-    public String getName(){
+    public String getName() {
         return name;
     }
-     public void setCashAmount(int newCashAmount){
-            if(newCashAmount>=0){
-                cashAmount = newCashAmount;
-            }
+
+    public void setAge(int pAge) {
+        if(pAge >= 0) {
+            age = pAge;
         }
-     public int getCashAmount(){
-            return cashAmount;
+    }
+    public int getAge() {
+        return age;
+    }
+
+    public void setCashAmount(int pCashAmount) {
+        if(pCashAmount >= 0) {
+            cashAmount = pCashAmount;
         }
+    }
+    public int getCashAmount(){
+        return cashAmount;
+    }
+
+    public void setAccount(BankAccount pAccount) {
+        account = pAccount;
+    }
+    public BankAccount getAccount() {
+        return account;
+    }
+
+
+
+    // account와 account 간의 거래이므로, 첫째로 BankAccount 클래스의 transfer 메소드를 써야함.
+    // 둘째로 Person to의 정보를 to의 account 정보로 바꾸어 호출.
+    public boolean transfer(Person to, int amount) {
+        return account.transfer(to.getAccount(), amount);
+    }
+
+    // account와 account 간의 거래이므로, BankAccount 클래스의 transfer 메소드를 써야함.
+    public boolean transfer(BankAccount to, int amount) {
+        return account.transfer(to, amount);
+    }
 }
