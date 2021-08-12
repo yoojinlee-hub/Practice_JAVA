@@ -2,6 +2,28 @@ public class BankAccount {
     private int balance;
     private Person owner;
 
+    public BankAccount (int pBalance){
+        if(pBalance<0){
+            balance = 0;
+        }else{
+            balance = pBalance;
+        }
+    }
+    public BankAccount(Person pOwner){
+        owner = pOwner;
+        balance =0;
+    }
+    public BankAccount(int pBalance, Person pOwner) {
+        owner = pOwner;
+        if(pBalance<0){
+            balance = 0;
+        }else{
+            balance = pBalance;
+        }
+    }
+
+
+
     public void setBalance(int pBalance) {
         if(pBalance >= 0) {
             balance = pBalance;
@@ -14,6 +36,7 @@ public class BankAccount {
     public void setOwner(Person pOwner) {
         owner = pOwner;
     }
+
     public Person getOwner() {
         return owner;
     }
@@ -83,4 +106,5 @@ public class BankAccount {
             return true;
         }
     }
+
 }
