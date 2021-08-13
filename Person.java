@@ -4,56 +4,55 @@ public class Person {
     private int cashAmount;
     private BankAccount account;
 
-    public Person(String pName,int pAge){
-        name = pName;
-        cashAmount = 0;
-        if(pAge<0){
-            age = 12;
+    public Person(String name,int age){
+        this(name, age, 0);
+        if(age<0){
+            this.age = 12;
         }else{
-            age = pAge;
+            this.age = age;
         }
     }
-    public Person(String pName,int pAge, int pCashAmount){
-        name = pName;
-        if(pAge<0){
-            age = 12;
+    public Person(String name,int age, int cashAmount){
+        this.name = name;
+        if(age<0){
+            this.age = 12;
         }else{
-            age = pAge;
+            this.age = age;
         }
-        if(pCashAmount<0){
-            cashAmount = 0;
+        if(cashAmount<0){
+            this.cashAmount = 0;
         }else{
-            cashAmount = pCashAmount;
+            this.cashAmount = cashAmount;
         }
     }
 
-    public void setName(String pName) {
-        name = pName;
+    public void setName(String name) {
+        this.name = name;
     }
     public String getName() {
         return name;
     }
 
-    public void setAge(int pAge) {
-        if(pAge >= 0) {
-            age = pAge;
+    public void setAge(int age) {
+        if(age >= 0) {
+            this.age = age;
         }
     }
     public int getAge() {
         return age;
     }
 
-    public void setCashAmount(int pCashAmount) {
-        if(pCashAmount >= 0) {
-            cashAmount = pCashAmount;
+    public void setCashAmount(int cashAmount) {
+        if(cashAmount >= 0) {
+            this.cashAmount = cashAmount;
         }
     }
     public int getCashAmount(){
         return cashAmount;
     }
 
-    public void setAccount(BankAccount pAccount) {
-        account = pAccount;
+    public void setAccount(BankAccount account) {
+        this.account = account;
     }
     public BankAccount getAccount() {
         return account;

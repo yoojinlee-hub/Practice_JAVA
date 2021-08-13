@@ -29,9 +29,9 @@ public class practice_class { //객체의 설계도 main 메소드 BankDriver
 
         BankAccount a1 = new BankAccount(p1);
         a1.setBalance(100000);
-        p1.setAccount(a1);//이거 조심!
+        //p1.setAccount(a1);//이거 조심!
         BankAccount a2 = new BankAccount(500000, p2);
-        p2.setAccount(a2); //이거 조심!
+        //p2.setAccount(a2); //이거 조심!
 
         a2.deposit(30000);
         a2.withdraw(170000);

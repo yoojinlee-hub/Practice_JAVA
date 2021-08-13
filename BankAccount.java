@@ -2,39 +2,41 @@ public class BankAccount {
     private int balance;
     private Person owner;
 
-    public BankAccount (int pBalance){
-        if(pBalance<0){
+    public BankAccount (int balance){
+        if(balance<0){
             balance = 0;
         }else{
-            balance = pBalance;
+            this.balance = balance;
         }
     }
-    public BankAccount(Person pOwner){
-        owner = pOwner;
+    public BankAccount(Person owner){
+        this.owner = owner;
         balance =0;
+        owner.setAccount(this);
     }
-    public BankAccount(int pBalance, Person pOwner) {
-        owner = pOwner;
-        if(pBalance<0){
-            balance = 0;
+    public BankAccount(int balance, Person owner) {
+        this.owner = owner;
+        if(balance<0){
+            this.balance = 0;
         }else{
-            balance = pBalance;
+            this.balance = balance;
         }
+        owner.setAccount(this);
     }
 
 
 
-    public void setBalance(int pBalance) {
-        if(pBalance >= 0) {
-            balance = pBalance;
+    public void setBalance(int balance) {
+        if(balance >= 0) {
+            this.balance = balance;
         }
     }
     public int getBalance() {
         return balance;
     }
 
-    public void setOwner(Person pOwner) {
-        owner = pOwner;
+    public void setOwner(Person owner) {
+        this.owner = owner;
     }
 
     public Person getOwner() {
